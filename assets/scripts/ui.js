@@ -102,6 +102,7 @@ const onIndexEntrysSuccess = function (response) {
   const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
   $('#handlebars-test').html(indexEntrysHTML)
 }
+// Hope this works
 
 const onIndexEntrysFailure = function (response) {
   failureMessage('Indexed entrys failed')
