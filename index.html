@@ -23,49 +23,63 @@
       <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
       <button id='btnSignUp' class="btn btn-dark">Sign Up</button>
     </form>
-
+    <br>
     <!-- SIGN-IN FORM-->
     <form id="sign-in">
       <input type="text" name="credentials[email]" placeholder="Email">
       <input type="password" name="credentials[password]" placeholder="Password">
       <button id='btnSignIn' class="btn btn-dark">Sign In</button>
     </form>
+    <br>
+    <!-- CHANGE PASSWORD FORM -->
+    <form id="change-password">
+      <input type="text" name="credentials[old_password]" placeholder="Old Password">
+      <input type="password" name="credentials[new_password]" placeholder="New Password">
+      <button id='btnSignIn' class="btn btn-dark">Change Password</button>
+    </form>
+    <br>
+    <!-- SIGN-OUT FORM -->
+    <form id="sign-out">
+      <button id='btn-sign-out' class="btn btn-dark">Sign Out</button>
+    </form>
   </nav>
   <header>
 
   </header>
   <main>
-    <!-- POSTS/COMMENTS SECTION-->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Create Post</button>
+    <!-- POSTS/COMMENTS SECTION -->
+    <!-- CREATE POST -->
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="create_post">Create Post</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Post</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Title:</label>
-            <input type="text" class="form-control" id="recipient-name">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Post</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Entry:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+          <div class="modal-body">
+            <form id="create-post">
+              <div class="form-group">
+                <label for="title" class="col-form-label">Title:</label>
+                <input type="text" class="form-control" id="title">
+              </div>
+              <div class="form-group">
+                <label for="text" class="col-form-label">Entry:</label>
+                <textarea class="form-control" id="text"></textarea>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create Post</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Create Post</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
   </main>
 </body>
 
