@@ -110,20 +110,6 @@ const onDeleteEntryFailure = function (response) {
   console.log(response)
 }
 
-const onIndexEntrysSuccess = function (response) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  console.log('Indexed entrys success')
-  console.log(response)
-=======
-=======
->>>>>>> successfailmessages
-  successMessage('Indexed entrys success')
-  const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
-  $('#handlebars-test').html(indexEntrysHTML)
->>>>>>> Success and Failure Messages Implemented
-}
-
 const onIndexEntrysFailure = function (response) {
   failureMessage('Indexed entrys failed')
   console.log(response)
@@ -144,6 +130,5 @@ module.exports = {
   onUpdateEntryFailure,
   onDeleteEntrySuccess,
   onDeleteEntryFailure,
-  onIndexEntrysSuccess,
   onIndexEntrysFailure
 }
