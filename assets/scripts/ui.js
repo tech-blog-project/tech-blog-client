@@ -48,7 +48,6 @@ const onSignOutSuccess = function (response) {
   // $('#sign-out').hide()
   // $('#sign-up').show()
   // $('#sign-in').show()
-  location.reload()
 }
 
 const onSignOutFailure = function (response) {

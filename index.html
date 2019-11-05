@@ -35,12 +35,12 @@
     <form id="change-password">
       <input type="password" name="passwords[old]" placeholder="Old Password">
       <input type="password" name="passwords[new]" placeholder="New Password">
-      <button id='btnSignIn' class="btn btn-dark">Change Password</button>
+      <button id='btnChangePassword' class="btn btn-dark">Change Password</button>
     </form>
     <br>
     <!-- SIGN-OUT FORM -->
     <form id="sign-out">
-      <button id='btn-sign-out' class="btn btn-dark">Sign Out</button>
+      <button id='btnSignOut' class="btn btn-dark">Sign Out</button>
     </form>
   </nav>
   <header>
@@ -48,21 +48,27 @@
   </header>
   <main>
     <!-- POSTS/COMMENTS SECTION -->
-    <!-- CREATE POST -->
-    <br>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="create_post">Create Post</button>
+    <!-- INDEX ENTRY -->
+    <form id="index-entry">
+      <br>
+      <button id="btn-index-entry" class="btn btn-dark">View All Entries</button>
+    </form>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- CREATE ENTRY -->
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal" data-whatever="create_entry">Create Entry</button>
+
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Post</h5>
+            <h5 class="modal-title" id="createModalLabel">Create Entry</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form id="create-post">
+            <form id="create-entry">
               <div class="form-group">
                 <label for="title" class="col-form-label">Title:</label>
                 <input type="text" class="form-control" id="title">
@@ -75,11 +81,50 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Create Post</button>
+            <button id="btn-create-entry" type="button" class="btn btn-dark">Create Entry</button>
           </div>
         </div>
       </div>
     </div>
+    <br>
+    <!-- UPDATE ENTRY -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-whatever="update_entry">Update Entry</button>
+
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateModalLabel">Update Entry</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="update-entry">
+              <div class="form-group">
+                <label for="title" class="col-form-label">Title:</label>
+                <input type="text" class="form-control" id="title">
+              </div>
+              <div class="form-group">
+                <label for="text" class="col-form-label">Entry:</label>
+                <textarea class="form-control" id="text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="btn-update-entry" type="button" class="btn btn-dark">Update Entry</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- DELETE ENTRY -->
+    <form id="delete-entry">
+      <input class="input-delete-entry" placeholder="ID" type="text" name="entry[id]" required>
+      <br>
+      <button id="btn-delete-entry" class="btn btn-dark">Delete Entry</button>
+    </form>
   </main>
 </body>
 
