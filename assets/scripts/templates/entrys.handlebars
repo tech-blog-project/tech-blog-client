@@ -1,6 +1,6 @@
 {{#each entrys as |entry|}}
-<div class="card" data-id="{{entry._id}}">
-  <div class="card-header">{{entry.title}} by {{entry.owner.email}}</div>
+<div class="card" data-id="{{entry.id}}">
+  <div class="card-header">{{entry.title}} by {{entry.owner}}</div>
   <div class="card-body">
     <p class="card-text">{{entry.text}}</p>
   </div>

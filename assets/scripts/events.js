@@ -71,10 +71,9 @@ const onDeleteEntry = function (event) {
 
 const onIndexEntrys = function (event) {
   event.preventDefault()
-
   api.indexEntrys()
-    .then(ui.onEntrysIndexSuccess)
-    .catch(ui.onEntrysIndexFailure)
+    .then(ui.onIndexEntrysSuccess)
+    .catch(ui.onIndexEntrysFailure)
 }
 
 module.exports = {
