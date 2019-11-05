@@ -66,6 +66,36 @@ const onCreateEntryFailure = function (response) {
   console.log(response)
 }
 
+const onUpdateEntrySuccess = function (response) {
+  console.log('Updated entry successfully')
+  console.log(response)
+}
+
+const onUpdateEntryFailure = function (response) {
+  console.log('Update entry failed')
+  console.log(response)
+}
+
+const onDeleteEntrySuccess = function (response) {
+  console.log('Deleted entry successfully')
+  console.log(response)
+}
+
+const onDeleteEntryFailure = function (response) {
+  console.log('Delete entry failed')
+  console.log(response)
+}
+
+const onIndexEntrysSuccess = function (response) {
+  console.log('Indexed entrys success')
+  console.log(response)
+}
+
+const onIndexEntrysFailure = function (response) {
+  console.log('Indexed entrys failed')
+  console.log(response)
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -76,5 +106,11 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onCreateEntrySuccess,
-  onCreateEntryFailure
+  onCreateEntryFailure,
+  onUpdateEntrySuccess,
+  onUpdateEntryFailure,
+  onDeleteEntrySuccess,
+  onDeleteEntryFailure,
+  onIndexEntrysSuccess,
+  onIndexEntrysFailure
 }

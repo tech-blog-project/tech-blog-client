@@ -53,10 +53,44 @@ const createEntry = function (formData) {
   })
 }
 
+const updateEntry = function (formData) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/entrys/' + formData.entry.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
+const deleteEntry = function (formData) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/entrys/' + formData.entry.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const indexEntrys = function (formData) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/entrys',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  createEntry
+  createEntry,
+  updateEntry,
+  deleteEntry,
+  indexEntrys
 }

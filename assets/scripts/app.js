@@ -13,4 +13,7 @@ $(() => {
   $('#change-password').on('submit', events.onChangePassword)
   $('#sign-out').on('submit', events.onSignOut)
   $('#create-entry').on('submit', events.onCreateEntry)
+  $('#update-entry').on('submit', events.onUpdateEntry)
+  $('#delete-entry').on('submit', events.onDeleteEntry)
+  $('#index-entrys').on('submit', events.onIndexEntrys)
 })
