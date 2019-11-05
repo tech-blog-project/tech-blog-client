@@ -43,6 +43,7 @@ const signOut = function () {
 }
 
 const createEntry = function (formData) {
+  console.log('form data is ', formData)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/entrys',

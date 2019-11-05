@@ -44,6 +44,7 @@ const onSignOut = function (event) {
 const onCreateEntry = function (event) {
   event.preventDefault()
   const form = event.target
+  console.log(form)
   const formData = getFormFields(form)
   api.createEntry(formData)
     .then(ui.onCreateEntrySuccess)
