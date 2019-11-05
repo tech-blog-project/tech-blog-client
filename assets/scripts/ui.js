@@ -112,9 +112,12 @@ const onDeleteEntryFailure = function (response) {
 
 const onIndexEntrysSuccess = function (response) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   console.log('Indexed entrys success')
   console.log(response)
 =======
+=======
+>>>>>>> successfailmessages
   successMessage('Indexed entrys success')
   const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
   $('#handlebars-test').html(indexEntrysHTML)
