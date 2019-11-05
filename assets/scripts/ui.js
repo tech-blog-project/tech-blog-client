@@ -1,7 +1,7 @@
 'use strict'
-const entrysTemplate = require('./templates/entrys.handlebars')
+
 const store = require('./store')
-// const api = require('./api')
+const api = require('./api')
 // const getFormFields = require('../../lib/get-form-fields.js')
 
 const onSignUpSuccess = function (response) {
@@ -10,6 +10,18 @@ const onSignUpSuccess = function (response) {
   // api.signIn(formFields)
   //   .then(onSignInSuccess)
   //   .catch(onSignInFailure)
+  // successMessage('Signed up successfully!')
+  const email = $('#sign-up-email').val()
+  const password = $('#sign-up-password').val()
+  const formFields = {
+    credentials: {
+      email: email,
+      password: password
+    }
+  }
+  api.signIn(formFields)
+    .then(onSignInSuccess)
+    .catch(onSignInFailure)
 }
 
 const onSignUpFailure = function (response) {
@@ -48,6 +60,7 @@ const onSignOutSuccess = function (response) {
   // $('#sign-out').hide()
   // $('#sign-up').show()
   // $('#sign-in').show()
+  location.reload()
 }
 
 const onSignOutFailure = function (response) {
@@ -87,8 +100,7 @@ const onDeleteEntryFailure = function (response) {
 
 const onIndexEntrysSuccess = function (response) {
   console.log('Indexed entrys success')
-  const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
-  $('#handlebars-test').html(indexEntrysHTML)
+  console.log(response)
 }
 
 const onIndexEntrysFailure = function (response) {
