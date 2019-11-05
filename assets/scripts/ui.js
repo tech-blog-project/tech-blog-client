@@ -3,6 +3,7 @@
 const store = require('./store')
 const api = require('./api')
 // const getFormFields = require('../../lib/get-form-fields.js')
+const entrysTemplate = require('./templates/entrys.handlebars')
 
 const successMessage = (newText) => {
   $('#message').text(newText)
@@ -136,6 +137,7 @@ module.exports = {
   onUpdateEntrySuccess,
   onUpdateEntryFailure,
   onDeleteEntrySuccess,
+  onIndexEntrysSuccess,
   onDeleteEntryFailure,
   onIndexEntrysFailure
 }
