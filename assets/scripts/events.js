@@ -50,10 +50,39 @@ const onCreateEntry = function (event) {
     .catch(ui.onCreateEntryFailure)
 }
 
+const onUpdateEntry = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateEntry(formData)
+    .then(ui.onUpdateEntrySuccess)
+    .catch(ui.onUpdateEntryFailure)
+}
+
+const onDeleteEntry = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.deleteEntry(formData)
+    .then(ui.onDeleteEntrySuccess)
+    .catch(ui.onDeleteEntryFailure)
+}
+
+const onIndexEntrys = function (event) {
+  event.preventDefault()
+
+  api.indexEntrys()
+    .then(ui.onEntrysIndexSuccess)
+    .catch(ui.onEntrysIndexFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onCreateEntry
+  onCreateEntry,
+  onUpdateEntry,
+  onDeleteEntry,
+  onIndexEntrys
 }
