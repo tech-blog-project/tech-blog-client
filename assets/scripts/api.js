@@ -78,10 +78,7 @@ const deleteEntry = function (formData) {
 const indexEntrys = function (formData) {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/entrys',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+    url: config.apiUrl + '/entrys'
   })
 }
 
