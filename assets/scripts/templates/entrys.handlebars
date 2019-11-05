@@ -1,0 +1,21 @@
+{{#each entrys as |entry|}}
+<div class="card" data-id="{{entry._id}}">
+  <div class="card-header">{{entry.title}} by {{entry.owner.email}}</div>
+  <div class="card-body">
+    <p class="card-text">{{entry.text}}</p>
+  </div>
+  <div>
+    <button type="button" class="btn btn-dark" data-id="{{entry._id}}" user="{{entry.owner._id}}" title="{{entry.title}}" text="{{entry.text}}" data-toggle="modal" data-target="#updateModal" data-whatever="update_entry">EDIT</button>
+    <button type="button" data-id="{{entry._id}}" user={{entry.owner._id}} id="btn-delete-entry" class="btn btn-dark">Delete Entry</button>
+  </div>
+ <!--<div class="card-footer">
+    <section class="comments">
+      {{#each comments as |comment|}}
+      <div class="comment" data-id="{{comment._id}}">
+          <p class="comment-text">{{comment.owner.email}} says: {{comment.text}}</p>
+      </div>
+    </div>
+      {{/each}}
+    </section>
+  </div>-->
+{{/each}}

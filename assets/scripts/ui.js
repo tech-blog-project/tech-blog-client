@@ -1,5 +1,5 @@
 'use strict'
-
+const entrysTemplate = require('./templates/entrys.handlebars')
 const store = require('./store')
 // const api = require('./api')
 // const getFormFields = require('../../lib/get-form-fields.js')
@@ -86,8 +86,10 @@ const onDeleteEntryFailure = function (response) {
 }
 
 const onIndexEntrysSuccess = function (response) {
+  console.log('response is', response)
   console.log('Indexed entrys success')
-  console.log(response)
+  const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
+  $('#handlebars-test').html(indexEntrysHTML)
 }
 
 const onIndexEntrysFailure = function (response) {
