@@ -41,9 +41,19 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
+const onCreateEntry = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.createEntry(formData)
+    .then(ui.onCreateEntrySuccess)
+    .catch(ui.onCreateEntryFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateEntry
 }

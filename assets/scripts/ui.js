@@ -55,6 +55,16 @@ const onSignOutFailure = function (response) {
   console.log(response)
 }
 
+const onCreateEntrySuccess = function (response) {
+  console.log('Created entry successfully')
+  console.log(response)
+}
+
+const onCreateEntryFailure = function (response) {
+  console.log('Create entry failed')
+  console.log(response)
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -63,5 +73,7 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onCreateEntrySuccess,
+  onCreateEntryFailure
 }

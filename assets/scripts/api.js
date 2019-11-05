@@ -42,9 +42,21 @@ const signOut = function () {
   })
 }
 
+const createEntry = function (formData) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/entrys',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createEntry
 }
