@@ -25,6 +25,7 @@
       <button id='btnSignUp' class="btn btn-dark">Sign Up</button>
     </form>
     <br>
+
     <!-- SIGN-IN FORM-->
     <form id="sign-in">
       <input type="text" name="credentials[email]" placeholder="Email">
@@ -32,6 +33,7 @@
       <button id='btnSignIn' class="btn btn-dark">Sign In</button>
     </form>
     <br>
+
     <!-- CHANGE PASSWORD FORM -->
     <form id="change-password">
       <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -39,6 +41,7 @@
       <button id='btnChangePassword' class="btn btn-dark">Change Password</button>
     </form>
     <br>
+
     <!-- SIGN-OUT FORM -->
     <form id="sign-out">
       <button id='btnSignOut' class="btn btn-dark">Sign Out</button>
@@ -49,13 +52,13 @@
   </header>
   <main>
     <!-- BLOG SECTION -->
-    <!-- INDEX ENTRY -->
+    <!-- INDEX ENTRY FORM -->
     <form id="index-entrys">
       <br>
       <button id="btn-index-entry" class="btn btn-dark">View All Entries</button>
     </form>
 
-    <!-- CREATE ENTRY -->
+    <!-- CREATE ENTRY FORM -->
     <br>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal" data-whatever="create_entry">Create Entry</button>
 
@@ -82,7 +85,8 @@
       </div>
     </div>
     <br>
-    <!-- UPDATE ENTRY -->
+
+    <!-- UPDATE ENTRY FORM -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-whatever="update_entry">Update Entry</button>
 
     <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
@@ -110,7 +114,8 @@
       </div>
     </div>
     <br>
-    <!-- DELETE ENTRY -->
+
+    <!-- DELETE ENTRY FORM -->
     <form id="delete-entry">
       <input class="input-delete-entry" placeholder="ID" type="text" name="entry[id]" required>
       <br>

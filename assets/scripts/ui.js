@@ -6,6 +6,7 @@ const api = require('./api')
 
 const onSignUpSuccess = function (response) {
   console.log('Signed up successfully!')
+  $('form').trigger('reset')
   // const formFields = getFormFields(response.target)
   // api.signIn(formFields)
   //   .then(onSignInSuccess)
@@ -33,6 +34,7 @@ const onSignUpFailure = function (response) {
 const onSignInSuccess = function (responseData) {
   console.log('Signed in successfully!')
   store.user = responseData.user
+  $('form').trigger('reset')
   // api.()
   //   .then()
   //   .catch()
@@ -47,6 +49,7 @@ const onSignInFailure = function (response) {
 const onChangePasswordSuccess = function (response) {
   // $('#change-password').trigger('reset')
   console.log('Changed password successfully!')
+  $('form').trigger('reset')
 }
 
 const onChangePasswordFailure = function (response) {
@@ -71,16 +74,19 @@ const onSignOutFailure = function (response) {
 const onCreateEntrySuccess = function (response) {
   console.log('Created entry successfully')
   console.log(response)
+  $('form').trigger('reset')
 }
 
 const onCreateEntryFailure = function (response) {
   console.log('Create entry failed')
   console.log(response)
+  $('form').trigger('reset')
 }
 
 const onUpdateEntrySuccess = function (response) {
   console.log('Updated entry successfully')
   console.log(response)
+  $('form').trigger('reset')
 }
 
 const onUpdateEntryFailure = function (response) {
@@ -91,6 +97,7 @@ const onUpdateEntryFailure = function (response) {
 const onDeleteEntrySuccess = function (response) {
   console.log('Deleted entry successfully')
   console.log(response)
+  $('form').trigger('reset')
 }
 
 const onDeleteEntryFailure = function (response) {
