@@ -21,14 +21,14 @@
       <button class="btn btn-danger" value="delete" id="delete-comment">delete</button>
     </div>
   </form>
- <!--<div class="card-footer">
+ <div class="card-footer">
     <section class="comments">
       {{#each comments as |comment|}}
       <div class="comment" data-id="{{comment._id}}">
-          <p class="comment-text">{{comment.owner.email}} says: {{comment.text}}</p>
+          <p class="comment-text">{{comment.owner.email}} says: {{comment._text}}</p>
       </div>
     </div>
       {{/each}}
     </section>
-  </div>-->
+  </div>
 {{/each}}
