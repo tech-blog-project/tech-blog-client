@@ -1,5 +1,6 @@
 {{#each entrys as |entry|}}
 <div class="card" data-id="{{entry.id}}">
+  {{log entry}}
   <div class="card-header">{{entry.title}} by {{entry.owner.email}}, id is {{entry.id}} </div>
   <div class="card-body">
     <p class="card-text">{{entry.text}}</p>
@@ -12,6 +13,17 @@
       <button id="delete-button" class="btn btn-dark" data-id="{{entry.id}}" user={{entry.owner._id}} value="{{entry._id}}" name="entry[id]">Delete Entry</button>
 
   </div>
+  <div class="card-footer">
+    <section class="comments">
+      {{#each entry.comments as |comment|}}
+      <p> {{comment.owner}} says {{comment.text}} id {{comment.id}} </p>
+      <!-- <div class="comment" data-id="{{comment.id}}">
+          <p class="comment-text">{{comment.owner.email}} says: {{comment.text}}</p>
+      </div>
+    </div> -->
+      {{/each}}
+    </section>
+  </div>
   <form id="comment-form" value="{{entry.id}}">
     <textarea name="comment[text]" id="comments" style="width:96%;height:90px;padding:2%;font-size:1.2em;">
     </textarea>
@@ -21,15 +33,5 @@
       <button class="btn btn-danger" value="delete" id="delete-comment">delete</button>
     </div>
   </form>
-  <div class="card-footer">
-    <section class="comments">
-      {{#each entry.comments as |comment|}}
-      <p> {{comment}} </p>
-      <!-- <div class="comment" data-id="{{comment.id}}">
-          <p class="comment-text">{{comment.owner.email}} says: {{comment.text}}</p>
-      </div>
-    </div> -->
-      {{/each}}
-    </section>
-  </div>
+</div>
 {{/each}}
