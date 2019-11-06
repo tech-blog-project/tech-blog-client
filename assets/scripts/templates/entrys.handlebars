@@ -8,6 +8,15 @@
     <button type="button" class="btn btn-dark" data-id="{{entry._id}}" user="{{entry.owner._id}}" title="{{entry.title}}" text="{{entry.text}}" data-toggle="modal" data-target="#updateModal" data-whatever="update_entry">EDIT</button>
     <button type="button" data-id="{{entry._id}}" user={{entry.owner._id}} id="btn-delete-entry" class="btn btn-dark">Delete Entry</button>
   </div>
+  <form id="comment-form">
+    <textarea name="text" id="comments" style="width:96%;height:90px;padding:2%;font-size:1.2em;">
+    </textarea>
+    <div>
+      <button class="btn btn-info" value="comment" id="add-comment">comment</button>
+      <button class="btn btn-info" value="edit" id="edit-comment">edit</button>
+      <button class="btn btn-danger" value="delete" id="delete-comment">delete</button>
+    </div>
+  </form>
  <!--<div class="card-footer">
     <section class="comments">
       {{#each comments as |comment|}}
