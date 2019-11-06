@@ -94,6 +94,13 @@ const createComment = function (formData) {
   })
 }
 
+const indexComments = function (formData) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/comments'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -103,5 +110,6 @@ module.exports = {
   updateEntry,
   deleteEntry,
   indexEntrys,
-  createComment
+  createComment,
+  indexComments
 }

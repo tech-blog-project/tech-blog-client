@@ -97,6 +97,7 @@ const onDeleteEntry = function (event) {
 const onIndexEntrys = function (event) {
   event.preventDefault()
   api.indexEntrys()
+    .then(api.indexComments())
     .then(ui.onIndexEntrysSuccess)
     .catch(ui.onIndexEntrysFailure)
 }
