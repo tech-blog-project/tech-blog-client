@@ -101,7 +101,10 @@ const onCreateEntryFailure = function (response) {
 const onUpdateEntrySuccess = function (response) {
   successMessage('Updated entry successfully')
   $('form').trigger('reset')
-  console.log(response)
+  $(function () {
+    $('#updateModal').modal('toggle')
+  })
+//  console.log(response)
 }
 
 const onUpdateEntryFailure = function (response) {

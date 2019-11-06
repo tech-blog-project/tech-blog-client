@@ -55,6 +55,17 @@ const onCreateEntry = function (event) {
     .catch(ui.onCreateEntryFailure)
 }
 
+const setEditFields = function (event) {
+  event.preventDefault()
+  const entryId = $(event.target).attr('data-id')
+  const entryTitle = $(event.target).attr('title')
+  const entryText = $(event.target).attr('title')
+  console.log(entryId, entryTitle, entryText)
+  $('#entry-id').attr('value', entryId)
+  $('#update-title').attr('value', entryTitle)
+  $('#update-text').text(entryText)
+}
+
 const onUpdateEntry = function (event) {
   event.preventDefault()
   const form = event.target
@@ -98,5 +109,6 @@ module.exports = {
   onCreateEntry,
   onUpdateEntry,
   onDeleteEntry,
-  onIndexEntrys
+  onIndexEntrys,
+  setEditFields
 }

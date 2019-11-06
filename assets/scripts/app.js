@@ -18,4 +18,5 @@ $(() => {
   $('#index-entrys').on('submit', events.onIndexEntrys)
   // $('#hb-delete-entry').on('submit', events.onDeleteEntry)
   $('#handlebars-test').on('click', '#delete-button', events.onDeleteEntry)
+  $('#handlebars-test').on('click', '#edit-id-button', events.setEditFields)
 })
