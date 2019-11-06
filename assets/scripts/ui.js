@@ -35,6 +35,7 @@ const onSignUpSuccess = function (response) {
   api.signIn(formFields)
     .then(onSignInSuccess)
     .catch(onSignInFailure)
+  $('form').trigger('reset')
 }
 
 const onSignUpFailure = function (response) {
@@ -46,6 +47,7 @@ const onSignUpFailure = function (response) {
 const onSignInSuccess = function (responseData) {
   successMessage('Signed in successfully!')
   store.user = responseData.user
+  $('form').trigger('reset')
   // api.()
   //   .then()
   //   .catch()
@@ -60,6 +62,7 @@ const onSignInFailure = function (response) {
 const onChangePasswordSuccess = function (response) {
   // $('#change-password').trigger('reset')
   successMessage('Changed password successfully!')
+  $('form').trigger('reset')
 }
 
 const onChangePasswordFailure = function (response) {
@@ -83,6 +86,7 @@ const onSignOutFailure = function (response) {
 
 const onCreateEntrySuccess = function (response) {
   successMessage('Created entry successfully')
+  $('form').trigger('reset')
   console.log(response)
 }
 
@@ -93,6 +97,7 @@ const onCreateEntryFailure = function (response) {
 
 const onUpdateEntrySuccess = function (response) {
   successMessage('Updated entry successfully')
+  $('form').trigger('reset')
   console.log(response)
 }
 
@@ -103,6 +108,7 @@ const onUpdateEntryFailure = function (response) {
 
 const onDeleteEntrySuccess = function (response) {
   successMessage('Deleted entry successfully')
+  $('form').trigger('reset')
   console.log(response)
 }
 
