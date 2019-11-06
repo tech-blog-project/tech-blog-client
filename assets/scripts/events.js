@@ -104,8 +104,10 @@ const onIndexEntrys = function (event) {
 const onCreateComment = function (event) {
   event.preventDefault()
   const form = event.target
-  console.log(form)
   const formData = getFormFields(form)
+  console.log('entry id', $(event.target).attr('value'))
+  formData.comment.entry = $(event.target).attr('value')
+  console.log('create comment form data: ', formData)
   api.createComment(formData)
     .then(ui.onCreateCommentSuccess)
     .catch(ui.onCreateCommentFailure)
