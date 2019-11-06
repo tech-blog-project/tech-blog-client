@@ -76,6 +76,16 @@ const onIndexEntrys = function (event) {
     .catch(ui.onIndexEntrysFailure)
 }
 
+const onCreateComment = function (event) {
+  event.preventDefault()
+  const form = event.target
+  console.log(form)
+  const formData = getFormFields(form)
+  api.createComment(formData)
+    .then(ui.onCreateCommentSuccess)
+    .catch(ui.onCreateCommentFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -84,5 +94,6 @@ module.exports = {
   onCreateEntry,
   onUpdateEntry,
   onDeleteEntry,
-  onIndexEntrys
+  onIndexEntrys,
+  onCreateComment
 }

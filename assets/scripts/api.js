@@ -82,6 +82,18 @@ const indexEntrys = function (formData) {
   })
 }
 
+const createComment = function (formData) {
+  console.log('form data is ', formData)
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/comments',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -90,5 +102,6 @@ module.exports = {
   createEntry,
   updateEntry,
   deleteEntry,
-  indexEntrys
+  indexEntrys,
+  createComment
 }

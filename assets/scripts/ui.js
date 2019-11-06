@@ -129,6 +129,17 @@ const onIndexEntrysFailure = function (response) {
   console.log(response)
 }
 
+const onCreateCommentSuccess = function (response) {
+  successMessage('Created comment successfully')
+  $('form').trigger('reset')
+  console.log(response)
+}
+
+const onCreateCommentFailure = function (response) {
+  failureMessage('Create comment failed')
+  console.log(response)
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -145,5 +156,7 @@ module.exports = {
   onDeleteEntrySuccess,
   onIndexEntrysSuccess,
   onDeleteEntryFailure,
-  onIndexEntrysFailure
+  onIndexEntrysFailure,
+  onCreateCommentSuccess,
+  onCreateCommentFailure
 }

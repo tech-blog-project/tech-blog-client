@@ -3,6 +3,7 @@
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 const events = require('./events.js')
+// const entrysTemplate = require('./templates/entrys.handlebars')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
@@ -16,4 +17,6 @@ $(() => {
   $('#update-entry').on('submit', events.onUpdateEntry)
   $('#delete-entry').on('submit', events.onDeleteEntry)
   $('#index-entrys').on('submit', events.onIndexEntrys)
+  // grabbing the #comment-form from handlebars
+  $(document.body).on('submit', '#comment-form', events.onCreateComment)
 })
