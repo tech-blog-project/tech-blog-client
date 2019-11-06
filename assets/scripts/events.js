@@ -47,6 +47,10 @@ const onCreateEntry = function (event) {
   console.log(form)
   const formData = getFormFields(form)
   api.createEntry(formData)
+    .then(function () {
+      // should re-index the entrys
+      onIndexEntrys(event)
+    })
     .then(ui.onCreateEntrySuccess)
     .catch(ui.onCreateEntryFailure)
 }
@@ -56,15 +60,25 @@ const onUpdateEntry = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   api.updateEntry(formData)
+    .then(function () {
+    // should re-index the entrys
+      onIndexEntrys(event)
+    })
     .then(ui.onUpdateEntrySuccess)
     .catch(ui.onUpdateEntryFailure)
 }
 
 const onDeleteEntry = function (event) {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.deleteEntry(formData)
+  // set const id to be the button's value attr
+  // which we'd made the entry.id in handlebars
+  const id = $(event.target).attr('value')
+  // pass id
+  api.deleteEntry(id)
+    .then(function () {
+      // should re-index the entrys
+      onIndexEntrys(event)
+    })
     .then(ui.onDeleteEntrySuccess)
     .catch(ui.onDeleteEntryFailure)
 }

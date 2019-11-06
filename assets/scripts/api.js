@@ -68,7 +68,7 @@ const updateEntry = function (formData) {
 const deleteEntry = function (formData) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/entrys/' + formData.entry.id,
+    url: config.apiUrl + '/entrys/' + formData, // .entry.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
