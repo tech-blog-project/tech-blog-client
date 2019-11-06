@@ -9,7 +9,7 @@
     <button type="button" data-id="{{entry._id}}" user={{entry.owner._id}} id="btn-delete-entry" class="btn btn-dark">Delete Entry</button>
   </div>
   <form id="comment-form">
-    <textarea name="text" id="comments" style="width:96%;height:90px;padding:2%;font-size:1.2em;">
+    <textarea name="comment[text]" id="comments" style="width:96%;height:90px;padding:2%;font-size:1.2em;">
     </textarea>
     <div>
       <button class="btn btn-info" value="submit" id="add-comment">comment</button>
