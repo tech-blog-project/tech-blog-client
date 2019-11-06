@@ -83,6 +83,9 @@ const onSignOutFailure = function (response) {
 
 const onCreateEntrySuccess = function (response) {
   successMessage('Created entry successfully')
+  $(function () {
+    $('#createModal').modal('toggle')
+})
   console.log(response)
 }
 
@@ -108,7 +111,7 @@ const onDeleteEntrySuccess = function (response) {
 
 const onDeleteEntryFailure = function (response) {
   failureMessage('Delete entry failed')
-  console.log(response)
+  // console.log(response)
 }
 
 const onIndexEntrysSuccess = function (response) {
