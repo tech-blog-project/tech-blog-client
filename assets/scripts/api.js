@@ -13,7 +13,6 @@ const signUp = function (formData) {
 }
 
 const signIn = function (formData) {
-  console.log('signIn')
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
@@ -43,7 +42,6 @@ const signOut = function () {
 }
 
 const createEntry = function (formData) {
-  console.log('form data is ', formData)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/entrys',
@@ -83,7 +81,6 @@ const indexEntrys = function (formData) {
 }
 
 const createComment = function (formData) {
-  console.log('form data is ', formData)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/comments',

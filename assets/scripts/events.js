@@ -44,7 +44,6 @@ const onSignOut = function (event) {
 const onCreateEntry = function (event) {
   event.preventDefault()
   const form = event.target
-  console.log(form)
   const formData = getFormFields(form)
   api.createEntry(formData)
     .then(function () {
@@ -60,7 +59,6 @@ const setEditFields = function (event) {
   const entryId = $(event.target).attr('data-id')
   const entryTitle = $(event.target).attr('title')
   const entryText = $(event.target).attr('text')
-  console.log(entryId, entryTitle, entryText)
   $('#entry-id').attr('value', entryId)
   $('#update-title').attr('value', entryTitle)
   $('#update-text').text(entryText)
@@ -71,7 +69,6 @@ const setEditCommentFields = function (event) {
   const commentId = $(event.target).attr('data-id')
   const commentOwner = $(event.target).attr('user')
   const commentText = $(event.target).attr('text')
-  console.log(commentId, commentOwner, commentText)
   $('#comment-id').attr('value', commentId)
   $('#update-owner').attr('value', commentOwner)
   $('#update-comment-text').text(commentText)
@@ -132,9 +129,7 @@ const onCreateComment = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log('entry id', $(event.target).attr('value'))
   formData.comment.entry = $(event.target).attr('value')
-  console.log('create comment form data: ', formData)
   api.createComment(formData)
     .then(function () {
     // should re-index the entrys
