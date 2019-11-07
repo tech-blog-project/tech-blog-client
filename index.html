@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tech Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://kit.fontawesome.com/f3a8f57985.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- <div class="container"> -->
+  <nav>
+    <!-- SIGN-UP FORM-->
+    <div class="signUpAndSignIn">
+    <form id="sign-up">
+      <i class="fas fa-at"></i>
+      <input id='sign-up-email' type="text" name="credentials[email]" placeholder="Email">
+      <i class="fas fa-key"></i>
+      <input id='sign-up-password' type="password" name="credentials[password]" placeholder="Password">
+      <i class="fas fa-key"></i>
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+      <button id='btnSignUp' class="btn btn-dark">Sign Up</button>
+    </form>
+    <br>
+    <!-- SIGN-IN FORM-->
+    <form id="sign-in">
+      <i class="fas fa-at"></i>
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <i class="fas fa-key"></i>
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <button id='btnSignIn' class="btn btn-dark">Sign In</button>
+    </form>
+    </div>
+    <br>
+    <!-- CHANGE PASSWORD FORM -->
+    <div class="changePasswordAndSignOut">
+
+    <div class="changePassword">
+    <form id="change-password">
+      <i class="fas fa-key"></i>
+      <input type="password" name="passwords[old]" placeholder="Old Password">
+      <i class="fas fa-key"></i>
+      <input type="password" name="passwords[new]" placeholder="New Password">
+      <button id='btnChangePassword' class="btn btn-dark">Change Password</button>
+    </form>
+    </div>
+    <br>
+    <!-- SIGN-OUT FORM -->
+    <div class="signOut">
+    <form id="sign-out">
+      <button id='btnSignOut' class="btn btn-dark">Sign Out</button>
+    </form>
+    </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- BLOG SECTION -->
+      <h1><span>let</span> techBlog</h1>
+      <p>// share your stories with the world!</p>
+    <!-- INDEX ENTRY -->
+    <form id="index-entrys">
+      <br>
+      <button id="btn-index-entry" class="btn btn-dark">View All Entries</button>
+    </form>
+
+    <!-- CREATE ENTRY -->
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal" data-whatever="create_entry">Create Entry</button>
+
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createModalLabel">Create Entry</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="create-entry">
+              <label for="title" class="col-form-label">Title:</label>
+              <input type="text" class="form-control" id="create-title" name="entry[title]">
+              <label for="text" class="col-form-label">Entry:</label>
+              <textarea class="form-control" id="create-text" name="entry[text]"></textarea>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button id="btn-create-entry" class="btn btn-dark">Create Entry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- UPDATE Comment-->
+    <div class="modal fade" id="updateCommentModal" tabindex="-1" role="dialog" aria-labelledby="updateCommentModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateCommentModalLabel">Update Comment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="update-comment">
+              <label for="id" class="col-form-label">Comment ID:</label>
+              <input type="text" class="form-control" id="comment-id" name="comment[id]" value="">
+              <label for="text" class="col-form-label">Comment:</label>
+              <textarea class="form-control" id="update-comment-text" name="comment[text]" placeholder=""></textarea>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button id="btn-update-comment" class="btn btn-dark">Update Comment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- UPDATE Entry -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Update Entry</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="update-entry">
+                  <label for="id" class="col-form-label">Entry ID:</label>
+                  <input type="text" class="form-control" id="entry-id" name="entry[id]" value="">
+                  <label for="title" class="col-form-label">Title:</label>
+                  <input type="text" class="form-control" id="update-title" name="entry[title]" value="">
+                  <label for="text" class="col-form-label">Entry:</label>
+                  <textarea class="form-control" id="update-text" name="entry[text]" placeholder=""></textarea>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button id="btn-update" class="btn btn-dark">Update Entry</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div id="handlebars-test"></div>
+  </main>
+  <h5 id="message"></h5>
+  <!-- </div> -->
+</body>
+
+</html>
