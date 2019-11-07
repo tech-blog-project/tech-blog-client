@@ -103,10 +103,6 @@ const onChangePasswordFailure = function (response) {
 const onSignOutSuccess = function (response) {
   successMessage('Signed out successfully!')
   hideEverything()
-  $('#edit-id-button').hide()
-  $('#delete-button').hide()
-  $('#edit-comment-button').hide()
-  $('#delete-comment-button').prop('disabled', true)
   $('#comment-form').hide()
   $('#sign-up').show()
   $('#sign-in').show()
