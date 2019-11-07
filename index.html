@@ -81,38 +81,55 @@
       </div>
     </div>
     <br>
-    <!-- UPDATE ENTRY -->
-    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <!-- UPDATE Comment -->
+    <div class="modal fade" id="updateCommentModal" tabindex="-1" role="dialog" aria-labelledby="updateCommentModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="updateModalLabel">Update Entry</h5>
+            <h5 class="modal-title" id="updateCommentModalLabel">Update Comment</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form id="update-entry">
-              <label for="id" class="col-form-label">Entry ID:</label>
-              <input type="text" class="form-control" id="entry-id" name="entry[id]" value="">
-              <label for="title" class="col-form-label">Title:</label>
-              <input type="text" class="form-control" id="update-title" name="entry[title]" value="">
-              <label for="text" class="col-form-label">Entry:</label>
-              <textarea class="form-control" id="update-text" name="entry[text]" placeholder=""></textarea>
+            <form id="update-comment">
+              <label for="id" class="col-form-label">Comment ID:</label>
+              <input type="text" class="form-control" id="comment-id" name="comment[id]" value="">
+              <label for="text" class="col-form-label">Comment:</label>
+              <textarea class="form-control" id="update-comment-text" name="comment[text]" placeholder=""></textarea>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button id="btn-update-entry" class="btn btn-dark">Update Entry</button>
+              <button id="btn-update-comment" class="btn btn-dark">Update Comment</button>
             </form>
           </div>
         </div>
       </div>
     </div>
     <br>
-    <!-- DELETE ENTRY
-    <form id="delete-entry">
-      <input class="input-delete-entry" placeholder="ID" type="text" name="entry[id]" required>
-      <br>
-      <button id="btn-delete-entry" class="btn btn-dark">Delete Entry</button>
-    </form> -->
+    <!-- UPDATE Entry -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Update Entry</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="update-entry">
+                  <label for="id" class="col-form-label">Entry ID:</label>
+                  <input type="text" class="form-control" id="entry-id" name="entry[id]" value="">
+                  <label for="title" class="col-form-label">Title:</label>
+                  <input type="text" class="form-control" id="update-title" name="entry[title]" value="">
+                  <label for="text" class="col-form-label">Entry:</label>
+                  <textarea class="form-control" id="update-text" name="entry[text]" placeholder=""></textarea>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button id="btn-update" class="btn btn-dark">Update Entry</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     <div id="handlebars-test"></div>
   </main>
   <h5 id="message"></h5>

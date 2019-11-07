@@ -59,11 +59,22 @@ const setEditFields = function (event) {
   event.preventDefault()
   const entryId = $(event.target).attr('data-id')
   const entryTitle = $(event.target).attr('title')
-  const entryText = $(event.target).attr('title')
+  const entryText = $(event.target).attr('text')
   console.log(entryId, entryTitle, entryText)
   $('#entry-id').attr('value', entryId)
   $('#update-title').attr('value', entryTitle)
   $('#update-text').text(entryText)
+}
+
+const setEditCommentFields = function (event) {
+  event.preventDefault()
+  const commentId = $(event.target).attr('data-id')
+  const commentOwner = $(event.target).attr('user')
+  const commentText = $(event.target).attr('text')
+  console.log(commentId, commentOwner, commentText)
+  $('#comment-id').attr('value', commentId)
+  $('#update-owner').attr('value', commentOwner)
+  $('#update-comment-text').text(commentText)
 }
 
 const onUpdateEntry = function (event) {
@@ -124,5 +135,6 @@ module.exports = {
   onDeleteEntry,
   onIndexEntrys,
   setEditFields,
-  onCreateComment
+  onCreateComment,
+  setEditCommentFields
 }
