@@ -5,6 +5,12 @@ const api = require('./api')
 // const getFormFields = require('../../lib/get-form-fields.js')
 const entrysTemplate = require('./templates/entrys.handlebars')
 
+const hideEverything = () => {
+  // $('.signUpAndSignIn').hide()
+}
+
+hideEverything()
+
 const successMessage = (newText) => {
   $('#message').text(newText)
   $('#message').removeClass('failure')
