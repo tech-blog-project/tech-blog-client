@@ -1,0 +1,23 @@
+{{#each entrys as |entry|}}
+  <div class="card" data-id="{{entry.id}}">
+
+    <section class="row">
+      <section class="col-6">
+        <div class="card-header">{{entry.title}} by {{entry.owner.email}}<!--, id is {{entry.id}}--> </div>
+        <div class="card-body">
+          <p class="card-text">{{entry.text}}</p>
+        </div>
+      </section>
+
+      <div class="card-footer col-6">
+        <section class="comments">
+          {{#each entry.comments as |comment|}}
+            <p> ID:{{comment.owner}}  commented... <p>
+            <p> {{comment.text}} </p><!-- id {{comment.id}} -->
+          {{/each}}
+        </section>
+          </div>
+      </div>
+  </section>
+  </div>
+{{/each}}
