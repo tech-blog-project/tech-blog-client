@@ -2,18 +2,27 @@
 @import url('https://fonts.googleapis.com/css?family=Share+Tech&display=swap');
 
 body {
-  // background-color: black;
+  background-color: black;
   font-family: 'Share Tech', sans-serif;
   text-align: center;
 }
 
 .signUpAndSignIn {
+  // background-color: black;
   display: flex;
   padding-top: 10px;
 }
 
+#sign-up {
+  padding-left: 100px;
+}
+
 #sign-in {
-  padding-left: 180px;
+  padding-left: 80px;
+}
+
+i {
+  color: #00FF41;
 }
 
 .changePasswordAndSignOut {
@@ -29,6 +38,19 @@ body {
 input {
   color: #00FF41;
   background-color: black;
+  border-radius: 5px;
+  // background-color: Transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  height: 25px;
+  margin-right: 20px;
+  outline: none;
+  width: 150px;
+}
+
+::placeholder {
+  color: white;
 }
 
 h1 {
