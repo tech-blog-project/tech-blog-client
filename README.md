@@ -18,8 +18,8 @@ The back end is built with Javascript, uitlizing Express and the Mongoose modeli
 ## Resources
 - [Back end repo](https://github.com/tech-blog-project/tech-blog-api)
 - [Front end repo](https://github.com/tech-blog-project/tech-blog-client)
-- [Deployed application (GitHub pages)](#)
-- [Deployed back end (Heroku)](#)
+- [Deployed application (GitHub pages)](https://tech-blog-project.github.io/tech-blog-client/)
+- [Deployed back end (Heroku)](https://infinite-spire-96570.herokuapp.com/)
 
 
 ## Technologies Used
