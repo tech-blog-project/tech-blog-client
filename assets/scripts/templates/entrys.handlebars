@@ -17,6 +17,8 @@
     <section class="comments">
       {{#each entry.comments as |comment|}}
       <p> {{comment.owner}} says {{comment.text}} id {{comment.id}} </p>
+      <button class="btn btn-info" value="edit" id="edit-comment-button">edit</button>
+      <button class="btn btn-danger" value="delete" id="delete-comment-button">delete</button>
       <!-- <div class="comment" data-id="{{comment.id}}">
           <p class="comment-text">{{comment.owner.email}} says: {{comment.text}}</p>
       </div>
@@ -29,8 +31,6 @@
     </textarea>
     <div>
       <button class="btn btn-info" value="comment" id="add-comment">comment</button>
-      <button class="btn btn-info" value="edit" id="edit-comment">edit</button>
-      <button class="btn btn-danger" value="delete" id="delete-comment">delete</button>
     </div>
   </form>
 </div>
