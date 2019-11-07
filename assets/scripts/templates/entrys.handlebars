@@ -18,7 +18,7 @@
       {{#each entry.comments as |comment|}}
       <p> {{comment.owner}} says {{comment.text}} id {{comment.id}} </p>
       <button class="btn btn-info" value="edit" id="edit-comment-button" data-id="{{comment.id}}" user="{{entry.owner._id}}" text="{{comment.text}}" data-toggle="modal" data-target="#updateCommentModal" data-whatever="update_comment">edit</button>
-      <button class="btn btn-danger" value="delete" id="delete-comment-button">delete</button>
+      <button class="btn btn-danger" value="delete" id="delete-comment-button" data-id="{{comment.id}}" name="comment[id]">delete</button>
       <!-- <div class="comment" data-id="{{comment.id}}">
           <p class="comment-text">{{comment.owner.email}} says: {{comment.text}}</p>
       </div>

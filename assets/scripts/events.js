@@ -105,6 +105,21 @@ const onDeleteEntry = function (event) {
     .catch(ui.onDeleteEntryFailure)
 }
 
+const onDeleteComment = function (event) {
+  event.preventDefault()
+  // set const id to be the button's value attr
+  // which we'd made the entry.id in handlebars
+  const id = $(event.target).attr('value')
+  // pass id
+  api.deleteComment(id)
+    .then(function () {
+      // should re-index the entrys
+      onIndexEntrys(event)
+    })
+    .then(ui.onDeleteCommentSuccess)
+    .catch(ui.onDeleteCommentFailure)
+}
+
 const onIndexEntrys = function (event) {
   event.preventDefault()
   api.indexEntrys()
@@ -121,6 +136,10 @@ const onCreateComment = function (event) {
   formData.comment.entry = $(event.target).attr('value')
   console.log('create comment form data: ', formData)
   api.createComment(formData)
+    .then(function () {
+    // should re-index the entrys
+      onIndexEntrys(event)
+    })
     .then(ui.onCreateCommentSuccess)
     .catch(ui.onCreateCommentFailure)
 }
@@ -136,5 +155,6 @@ module.exports = {
   onIndexEntrys,
   setEditFields,
   onCreateComment,
-  setEditCommentFields
+  setEditCommentFields,
+  onDeleteComment
 }

@@ -41,7 +41,7 @@ const onSignUpSuccess = function (response) {
 const onSignUpFailure = function (response) {
   failureMessage('Sign up failed')
   // $('#sign-up').trigger('reset')
-  console.log(response)
+  $('form').trigger('reset')
 }
 
 const onSignInSuccess = function (responseData) {
@@ -56,7 +56,7 @@ const onSignInSuccess = function (responseData) {
 const onSignInFailure = function (response) {
   failureMessage('Sign in failed')
   // $('#sign-in').trigger('reset')
-  console.log(response)
+  $('form').trigger('reset')
 }
 
 const onChangePasswordSuccess = function (response) {
@@ -67,7 +67,7 @@ const onChangePasswordSuccess = function (response) {
 
 const onChangePasswordFailure = function (response) {
   failureMessage('Change password failed')
-  console.log(response)
+  $('form').trigger('reset')
 }
 
 const onSignOutSuccess = function (response) {
@@ -76,7 +76,7 @@ const onSignOutSuccess = function (response) {
   // $('#sign-out').hide()
   // $('#sign-up').show()
   // $('#sign-in').show()
-  location.reload()
+  $('form').trigger('reset')
 }
 
 const onSignOutFailure = function (response) {
@@ -95,7 +95,7 @@ const onCreateEntrySuccess = function (response) {
 
 const onCreateEntryFailure = function (response) {
   failureMessage('Create entry failed')
-  console.log(response)
+  $('form').trigger('reset')
 }
 
 const onUpdateEntrySuccess = function (response) {
@@ -143,7 +143,31 @@ const onCreateCommentSuccess = function (response) {
 
 const onCreateCommentFailure = function (response) {
   failureMessage('Create comment failed')
+  $('form').trigger('reset')
+}
+
+const onDeleteCommentSuccess = function (response) {
+  successMessage('Deleted comment successfully')
+  $('form').trigger('reset')
   console.log(response)
+}
+
+const onDeleteCommentFailure = function (response) {
+  failureMessage('Delete comment failed')
+}
+
+const onUpdateCommentSuccess = function (response) {
+  successMessage('Updated Comment successfully')
+  $('form').trigger('reset')
+  $(function () {
+    $('#updateCommentModal').modal('toggle')
+  })
+//  console.log(response)
+}
+
+const onUpdateCommentFailure = function (response) {
+  failureMessage('Update Comment failed')
+  $('form').trigger('reset')
 }
 
 module.exports = {
@@ -164,5 +188,9 @@ module.exports = {
   onDeleteEntryFailure,
   onIndexEntrysFailure,
   onCreateCommentSuccess,
-  onCreateCommentFailure
+  onCreateCommentFailure,
+  onDeleteCommentSuccess,
+  onDeleteCommentFailure,
+  onUpdateCommentSuccess,
+  onUpdateCommentFailure
 }
