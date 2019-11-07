@@ -4,6 +4,7 @@ const store = require('./store')
 const api = require('./api')
 // const getFormFields = require('../../lib/get-form-fields.js')
 const entrysTemplate = require('./templates/entrys.handlebars')
+const entrysNonAuthTemplate = require('./templates/entrysnonauth.handlebars')
 // Hides everything
 const hideEverything = () => {
   $('#handlebars-test').hide()
@@ -12,7 +13,6 @@ const hideEverything = () => {
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#create-entry').hide()
-  $('#update-entry').hide()
   $('.btn-primary').hide()
   // $('.signUpAndSignIn').hide()
 }
@@ -20,7 +20,6 @@ const hideEverything = () => {
 hideEverything()
 $('#sign-up').show()
 $('#sign-in').show()
-$('#handlebars-test').show()
 
 const successMessage = (newText) => {
   $('#message').text(newText)
@@ -75,7 +74,7 @@ const onSignInSuccess = function (responseData) {
   $('#sign-out').show()
   $('#create-entry').show()
   $('#update-entry').show()
-  $('#handlebars-test').show()
+//  $('#handlebars-test').show()
   $('.btn-primary').show()
   store.user = responseData.user
   $('form').trigger('reset')
@@ -158,9 +157,19 @@ const onIndexEntrysSuccess = function (response) {
   // commented this out because it displays when a comment is posted which is
   // not user friendly and irrelevent
   // successMessage('Indexed entrys success')
-  $('#handlebars-test').show()
-  const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
-  $('#handlebars-test').html(indexEntrysHTML)
+  response.user = store.user
+  $('#handlebars-test').hide()
+  if (store.user) {
+    const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
+  //  $('#handlebars-test').hide()
+    $('#handlebars-test').show()
+    $('#handlebars-test').html(indexEntrysHTML)
+  } else {
+    const indexEntrysNonAuthHTML = entrysNonAuthTemplate({entrys: response.entrys})
+  //  $('#handlebars-test').hide()
+    $('#handlebars-test').show()
+    $('#handlebars-test').html(indexEntrysNonAuthHTML)
+  }
 }
 // Hope this works
 
