@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'main';
 @import url('https://fonts.googleapis.com/css?family=Share+Tech&display=swap');
 
 body {
@@ -7,10 +8,11 @@ body {
   text-align: center;
 }
 
+// SIGN UP AND SIGN IN FORM DIV
 .signUpAndSignIn {
   // background-color: black;
   display: flex;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 #sign-up {
@@ -21,23 +23,100 @@ body {
   padding-left: 80px;
 }
 
-i {
-  color: #00FF41;
+#change-password {
+  padding-left: 100px;
 }
 
+#sign-out {
+  padding-left: 80px;
+}
+
+// ICONS
+i {
+  color: $hover-color;
+}
+
+// CHANGE PASSWORD AND SIGN OUT FORM DIV
 .changePasswordAndSignOut {
   display: flex;
-  padding-top: 10px;
+  padding-top: 20px;
+}
+
+
+// ALL BUTTONS
+#btnSignUp {
+  background-color: $background-color-button;
+  color: $button-color;
+  border-radius: 30px;
+  // margin-left: 300px;
+}
+
+#btnSignUp:hover {
+  background-color: $button-color;
+  color: $hover-color;
+}
+
+#btnSignIn {
+  background-color: $background-color-button;
+  color: $button-color;
+  border-radius: 30px;
+  // margin-left: 300px;
+}
+
+#btnSignIn:hover {
+  background-color: $button-color;
+  color: $hover-color;
+}
+
+#btnChangePassword {
+  background-color: $background-color-button;
+  color: $button-color;
+  border-radius: 30px;
+  // margin-left: 300px;
+}
+
+#btnChangePassword:hover {
+  background-color: $button-color;
+  color: $hover-color;
 }
 
 #btnSignOut {
+  background-color: $background-color-button;
+  color: $button-color;
   border-radius: 30px;
   margin-left: 300px;
 }
 
+#btnSignOut:hover {
+  background-color: $button-color;
+  color: $hover-color;
+}
+
+#btn-index-entry {
+  background-color: $background-color-button;
+  color: $button-color;
+  border-radius: 30px;
+}
+
+#btn-index-entry:hover {
+  background-color:$button-color;
+  color: $hover-color;
+}
+
+// #btnCreateEntry {
+//   background-color: $background-color-button;
+//   color: $button-color;
+//   border-radius: 30px;
+// }
+//
+// #btnCreateEntry:hover {
+//     background-color:$button-color;
+//     color: $hover-color;
+// }
+
 input {
-  color: #00FF41;
-  background-color: black;
+  color: $hover-color;
+  background-color: $button-color;
   border-radius: 5px;
   // background-color: Transparent;
   border: none;
@@ -54,12 +133,18 @@ input {
 }
 
 h1 {
-  color: #00FF41;
+  color: $hover-color;
   font-size: 100px;
+  padding-top: 100px;
+}
+
+textarea {
+  background-color: black;
+  color: $hover-color;
 }
 
 span {
-  color: #c678dd;
+  color: #c99ad6;
 }
 
 #message {
