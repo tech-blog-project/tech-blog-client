@@ -11,23 +11,29 @@
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://kit.fontawesome.com/f3a8f57985.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="container">
+  <!-- <div class="container"> -->
   <nav>
     <!-- SIGN-UP FORM-->
     <div class="signUpAndSignIn">
     <form id="sign-up">
+      <i class="fas fa-at"></i>
       <input id='sign-up-email' type="text" name="credentials[email]" placeholder="Email">
+      <i class="fas fa-key"></i>
       <input id='sign-up-password' type="password" name="credentials[password]" placeholder="Password">
+      <i class="fas fa-key"></i>
       <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
       <button id='btnSignUp' class="btn btn-dark">Sign Up</button>
     </form>
     <br>
     <!-- SIGN-IN FORM-->
     <form id="sign-in">
+      <i class="fas fa-at"></i>
       <input type="text" name="credentials[email]" placeholder="Email">
+      <i class="fas fa-key"></i>
       <input type="password" name="credentials[password]" placeholder="Password">
       <button id='btnSignIn' class="btn btn-dark">Sign In</button>
     </form>
@@ -141,7 +147,7 @@
     <div id="handlebars-test"></div>
   </main>
   <h5 id="message"></h5>
-  </div>
+  <!-- </div> -->
 </body>
 
 </html>
