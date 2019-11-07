@@ -13,19 +13,19 @@ body {
 //   width: 95%;
 // }
 
-.signUp {
+.signUpAndSignIn {
   display: flex;
   justify-content: left;
 }
 
-.signIn {
-  display: flex;
-  justify-content: right;
-}
+// .signIn {
+//   display: flex;
+//   justify-content: right;
+// }
 
 #btnSignOut {
   margin: auto;
-  width: 70px;
+  width: 10%;
 }
 
 #message {
