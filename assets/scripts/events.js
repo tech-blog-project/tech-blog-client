@@ -109,7 +109,7 @@ const onDeleteComment = function (event) {
   event.preventDefault()
   // set const id to be the button's value attr
   // which we'd made the entry.id in handlebars
-  const id = $(event.target).attr('value')
+  const id = $(event.target).attr('data-id')
   // pass id
   api.deleteComment(id)
     .then(function () {
@@ -144,6 +144,18 @@ const onCreateComment = function (event) {
     .catch(ui.onCreateCommentFailure)
 }
 
+const onUpdateComment = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateComment(formData)
+    .then(function () {
+      onIndexEntrys(event)
+    })
+    .then(ui.onUpdateCommentSuccess)
+    .catch(ui.onUpdateCommentFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -156,5 +168,6 @@ module.exports = {
   setEditFields,
   onCreateComment,
   setEditCommentFields,
-  onDeleteComment
+  onDeleteComment,
+  onUpdateComment
 }

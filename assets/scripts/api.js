@@ -101,6 +101,27 @@ const indexComments = function (formData) {
   })
 }
 
+const deleteComment = function (formData) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/comments/' + formData, // .entry.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateComment = function (formData) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/comments/' + formData.comment.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -111,5 +132,7 @@ module.exports = {
   deleteEntry,
   indexEntrys,
   createComment,
-  indexComments
+  indexComments,
+  deleteComment,
+  updateComment
 }

@@ -22,4 +22,5 @@ $(() => {
   $('#handlebars-test').on('click', '#delete-comment-button', events.onDeleteComment)
   $('#handlebars-test').on('click', '#edit-comment-button', events.setEditCommentFields)
   $(document.body).on('submit', '#comment-form', events.onCreateComment)
+  $('#update-comment').on('submit', events.onUpdateComment)
 })

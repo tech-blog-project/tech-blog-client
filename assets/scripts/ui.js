@@ -81,7 +81,6 @@ const onSignOutSuccess = function (response) {
 
 const onSignOutFailure = function (response) {
   failureMessage('Sign out failed')
-  console.log(response)
 }
 
 const onCreateEntrySuccess = function (response) {
@@ -90,7 +89,6 @@ const onCreateEntrySuccess = function (response) {
   $(function () {
     $('#createModal').modal('toggle')
   })
-  console.log(response)
 }
 
 const onCreateEntryFailure = function (response) {
@@ -109,13 +107,11 @@ const onUpdateEntrySuccess = function (response) {
 
 const onUpdateEntryFailure = function (response) {
   failureMessage('Update entry failed')
-  console.log(response)
 }
 
 const onDeleteEntrySuccess = function (response) {
   successMessage('Deleted entry successfully')
   $('form').trigger('reset')
-  console.log(response)
 }
 
 const onDeleteEntryFailure = function (response) {
@@ -132,13 +128,11 @@ const onIndexEntrysSuccess = function (response) {
 
 const onIndexEntrysFailure = function (response) {
   failureMessage('Indexed entrys failed')
-  console.log(response)
 }
 
 const onCreateCommentSuccess = function (response) {
   successMessage('Created comment successfully')
   $('form').trigger('reset')
-  console.log(response)
 }
 
 const onCreateCommentFailure = function (response) {
@@ -149,7 +143,6 @@ const onCreateCommentFailure = function (response) {
 const onDeleteCommentSuccess = function (response) {
   successMessage('Deleted comment successfully')
   $('form').trigger('reset')
-  console.log(response)
 }
 
 const onDeleteCommentFailure = function (response) {

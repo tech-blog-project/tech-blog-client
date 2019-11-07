@@ -1,6 +1,5 @@
 {{#each entrys as |entry|}}
 <div class="card" data-id="{{entry.id}}">
-  {{log entry}}
   <div class="card-header">{{entry.title}} by {{entry.owner.email}}, id is {{entry.id}} </div>
   <div class="card-body">
     <p class="card-text">{{entry.text}}</p>
