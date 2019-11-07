@@ -4,12 +4,28 @@ const store = require('./store')
 const api = require('./api')
 // const getFormFields = require('../../lib/get-form-fields.js')
 const entrysTemplate = require('./templates/entrys.handlebars')
-
+// Hides everything
 const hideEverything = () => {
+  $('#handlebars-test').hide()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#create-entry').hide()
+  $('#update-entry').hide()
+  $('.btn-primary').hide()
+  $('#edit-id-button').hide()
+  $('#delete-button').hide()
+  $('#edit-comment-button').hide()
+  $('#delete-comment-button').hide()
+  $('#comment-form').hide()
   // $('.signUpAndSignIn').hide()
 }
-
+// By default will show sign-up and sign-in
 hideEverything()
+$('#sign-up').show()
+$('#sign-in').show()
+$('#handlebars-test').show()
 
 const successMessage = (newText) => {
   $('#message').text(newText)
@@ -25,6 +41,18 @@ const failureMessage = newText => {
 
 const onSignUpSuccess = function (response) {
   successMessage('Signed up successfully!')
+  hideEverything()
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#create-entry').show()
+  $('#update-entry').show()
+  $('#handlebars-test').show()
+  $('.btn-primary').show()
+  $('#edit-id-button').show()
+  $('#delete-button').show()
+  $('#edit-comment-button').show()
+  $('#delete-comment-button').show()
+  $('#comment-form').show()
   // const formFields = getFormFields(response.target)
   // api.signIn(formFields)
   //   .then(onSignInSuccess)
@@ -52,6 +80,18 @@ const onSignUpFailure = function (response) {
 
 const onSignInSuccess = function (responseData) {
   successMessage('Signed in successfully!')
+  hideEverything()
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#create-entry').show()
+  $('#update-entry').show()
+  $('#handlebars-test').show()
+  $('.btn-primary').show()
+  $('#edit-id-button').show()
+  $('#delete-button').show()
+  $('#edit-comment-button').show()
+  $('#delete-comment-button').show()
+  $('#comment-form').show()
   store.user = responseData.user
   $('form').trigger('reset')
   // api.()
@@ -78,10 +118,14 @@ const onChangePasswordFailure = function (response) {
 
 const onSignOutSuccess = function (response) {
   successMessage('Signed out successfully!')
-  // $('#change-password').hide()
-  // $('#sign-out').hide()
-  // $('#sign-up').show()
-  // $('#sign-in').show()
+  hideEverything()
+  $('#edit-id-button').hide()
+  $('#delete-button').hide()
+  $('#edit-comment-button').hide()
+  $('#delete-comment-button').prop('disabled', true)
+  $('#comment-form').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
   $('form').trigger('reset')
 }
 
@@ -127,6 +171,7 @@ const onDeleteEntryFailure = function (response) {
 
 const onIndexEntrysSuccess = function (response) {
   successMessage('Indexed entrys success')
+  $('#handlebars-test').show()
   const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
   $('#handlebars-test').html(indexEntrysHTML)
 }
