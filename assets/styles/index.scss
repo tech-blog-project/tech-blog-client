@@ -1,4 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Share+Tech&display=swap');
+
+body {
+  // background-color: black;
+  font-family: 'Share Tech', sans-serif;
+  text-align: center;
+}
+
+// .container {
+//   background-color: red;
+//   margin: auto;
+//   width: 95%;
+// }
+
+.signUp {
+  display: flex;
+  justify-content: left;
+}
+
+.signIn {
+  display: flex;
+  justify-content: right;
+}
+
+#btnSignOut {
+  margin: auto;
+  width: 70px;
+}
 
 #message {
   position: fixed;

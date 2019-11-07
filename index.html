@@ -14,9 +14,11 @@
 </head>
 
 <body>
-  <h1>Welcome to Tech Blog</h1>
+  <div class="container">
+    <div class="wrapper">
   <nav>
     <!-- SIGN-UP FORM-->
+    <div class="signUp">
     <form id="sign-up">
       <input id='sign-up-email' type="text" name="credentials[email]" placeholder="Email">
       <input id='sign-up-password' type="password" name="credentials[password]" placeholder="Password">
@@ -31,6 +33,7 @@
       <button id='btnSignIn' class="btn btn-dark">Sign In</button>
     </form>
     <br>
+    <h1>let techBlog</h1>
     <!-- CHANGE PASSWORD FORM -->
     <form id="change-password">
       <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -42,6 +45,7 @@
     <form id="sign-out">
       <button id='btnSignOut' class="btn btn-dark">Sign Out</button>
     </form>
+    </div>
   </nav>
   <header>
 
@@ -133,6 +137,8 @@
     <div id="handlebars-test"></div>
   </main>
   <h5 id="message"></h5>
+  </div>
+  </div>
 </body>
 
 </html>
