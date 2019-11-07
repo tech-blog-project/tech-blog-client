@@ -138,6 +138,12 @@ h1 {
   padding-top: 100px;
 }
 
+p {
+  color: rgba(100, 100, 100, 1);
+  font-size: 30px;
+  // margin-top: -40px;
+}
+
 textarea {
   background-color: black;
   color: $hover-color;
