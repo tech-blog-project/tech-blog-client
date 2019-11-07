@@ -11,13 +11,8 @@ It's a single page application (SPA) that allows users to sign up and sign in to
 
 The front end is built with Javascript/jQuery, HTML, and CSS. Resouces (entries and comments) are queried with AJAX, and displayed via Handlebars templates, which pull each entry and its associated comments into a section with additional Bootstrap elements.
 
-## About the Back End
-
-The back end is built with Javascript, uitlizing Express and the Mongoose modeling tool on top of MongoDB. Created entries and comments are stored in MongoDB collections.
-
 ## Resources
 - [Back end repo](https://github.com/tech-blog-project/tech-blog-api)
-- [Front end repo](https://github.com/tech-blog-project/tech-blog-client)
 - [Deployed application (GitHub pages)](https://tech-blog-project.github.io/tech-blog-client/)
 - [Deployed back end (Heroku)](https://infinite-spire-96570.herokuapp.com/)
 
@@ -91,43 +86,7 @@ Additional features we would like to implement:
 Issues we were unable to solve in V.1, but would like to address:
 
 - On our comments, the comment ID currently displays so it can be prefilled into the edit and delete forms. Unfortunately, the ID is a large and unwieldy series of letters and numbers, and doesn't look good.
-- another issue!
-- not too many issues, I hope
-
-## ERDs
-
-<h3>ERD</h3>
-<a href="https://imgur.com/PbfINtYj"><img src="https://i.imgur.com/PbfINtY.jpg" title="source: imgur.com" /></a>
-
-## Resource Routes
-
-The routes:
-
-### User
-| HTTP| CRUD| URI pattern | Method/Action |
-| :---:| :---:|:---:| :---:        |
-| POST  |CREATE|  /sign-up | app.post()/sign-up  |
-| POST  | CREATE|/sign-in  | app.post()/sign-in    |
-| PATCH | UPDATE|/change-password | app.patch()/change-password|
-| DELETE |DELETE| /sign-out  |  app.delete()/sign-out |
-
-### Entry
-| HTTP |CRUD| URI pattern | Method/Action |
-| :---:| :---:|:---:| :---:        |
-| POST  |CREATE|  /entrys | app.post()/create  |
-| GET  |READ| /entrys  | app.get()/index    |
-| GET   |READ| /entrys/:id  | app.get()/show  |
-| PATCH |UPDATE| /entrys/:id | app.patch()/update|
-| DELETE |DELETE| /entrys/:id |  app.delete()/destroy |
-
-### Comment
-| HTTP |CRUD| URI pattern | Method/Action |
-| :---:| :---:|:---:| :---:        |
-| POST  |CREATE|  /comments | app.post()/create  |
-| GET |READ| /comments  | app.get()/index    |
-| PATCH | UPDATE|/comments/:id | app.patch()/update|
-| DELETE |DELETE| /comments/:id |  app.delete()/destroy |
-
+- Fix the issues with handlebars templated elements being unable to be accessed directly
 
 
 ## Wireframes
