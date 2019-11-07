@@ -14,11 +14,6 @@ const hideEverything = () => {
   $('#create-entry').hide()
   $('#update-entry').hide()
   $('.btn-primary').hide()
-  $('#edit-id-button').hide()
-  $('#delete-button').hide()
-  $('#edit-comment-button').hide()
-  $('#delete-comment-button').hide()
-  $('#comment-form').hide()
   // $('.signUpAndSignIn').hide()
 }
 // By default will show sign-up and sign-in
@@ -48,11 +43,6 @@ const onSignUpSuccess = function (response) {
   $('#update-entry').show()
   $('#handlebars-test').show()
   $('.btn-primary').show()
-  $('#edit-id-button').show()
-  $('#delete-button').show()
-  $('#edit-comment-button').show()
-  $('#delete-comment-button').show()
-  $('#comment-form').show()
   // const formFields = getFormFields(response.target)
   // api.signIn(formFields)
   //   .then(onSignInSuccess)
@@ -87,11 +77,6 @@ const onSignInSuccess = function (responseData) {
   $('#update-entry').show()
   $('#handlebars-test').show()
   $('.btn-primary').show()
-  $('#edit-id-button').show()
-  $('#delete-button').show()
-  $('#edit-comment-button').show()
-  $('#delete-comment-button').show()
-  $('#comment-form').show()
   store.user = responseData.user
   $('form').trigger('reset')
   // api.()
@@ -156,7 +141,7 @@ const onUpdateEntrySuccess = function (response) {
 }
 
 const onUpdateEntryFailure = function (response) {
-  failureMessage('Update entry failed')
+  failureMessage('Update entry failed, are you signed in?')
 }
 
 const onDeleteEntrySuccess = function (response) {
@@ -165,7 +150,7 @@ const onDeleteEntrySuccess = function (response) {
 }
 
 const onDeleteEntryFailure = function (response) {
-  failureMessage('Delete entry failed')
+  failureMessage('Delete entry failed, are you signed in?')
   // console.log(response)
 }
 
@@ -189,7 +174,7 @@ const onCreateCommentSuccess = function (response) {
 }
 
 const onCreateCommentFailure = function (response) {
-  failureMessage('Create comment failed')
+  failureMessage('Create comment failed, are you signed in?')
   $('form').trigger('reset')
 }
 
@@ -199,7 +184,7 @@ const onDeleteCommentSuccess = function (response) {
 }
 
 const onDeleteCommentFailure = function (response) {
-  failureMessage('Delete comment failed')
+  failureMessage('Delete comment failed, are you signed in?')
 }
 
 const onUpdateCommentSuccess = function (response) {
@@ -212,7 +197,7 @@ const onUpdateCommentSuccess = function (response) {
 }
 
 const onUpdateCommentFailure = function (response) {
-  failureMessage('Update Comment failed')
+  failureMessage('Update Comment failed, are you signed in?')
   $('form').trigger('reset')
 }
 
