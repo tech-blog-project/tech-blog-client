@@ -22,7 +22,7 @@ The front end is built with Javascript/jQuery, HTML, and CSS. Resouces (entries 
 - AJAX
 - Atom
 - Bootstrap
-- CSS
+- CSS/SASS
 - cURL
 - Express
 - Git/GitHub
