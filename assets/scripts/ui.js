@@ -170,7 +170,9 @@ const onDeleteEntryFailure = function (response) {
 }
 
 const onIndexEntrysSuccess = function (response) {
-  successMessage('Indexed entrys success')
+  // commented this out because it displays when a comment is posted which is
+  // not user friendly and irrelevent
+  // successMessage('Indexed entrys success')
   $('#handlebars-test').show()
   const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
   $('#handlebars-test').html(indexEntrysHTML)
