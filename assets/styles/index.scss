@@ -7,25 +7,37 @@ body {
   text-align: center;
 }
 
-// .container {
-//   background-color: red;
-//   margin: auto;
-//   width: 95%;
-// }
-
 .signUpAndSignIn {
   display: flex;
-  justify-content: left;
+  padding-top: 10px;
 }
 
-// .signIn {
-//   display: flex;
-//   justify-content: right;
-// }
+#sign-in {
+  padding-left: 180px;
+}
+
+.changePasswordAndSignOut {
+  display: flex;
+  padding-top: 10px;
+}
 
 #btnSignOut {
-  margin: auto;
-  width: 10%;
+  border-radius: 30px;
+  margin-left: 300px;
+}
+
+input {
+  color: #00FF41;
+  background-color: black;
+}
+
+h1 {
+  color: #00FF41;
+  font-size: 100px;
+}
+
+span {
+  color: #c678dd;
 }
 
 #message {
