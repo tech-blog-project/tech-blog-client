@@ -74,7 +74,7 @@ const onSignInSuccess = function (responseData) {
   $('#sign-out').show()
   $('#create-entry').show()
   $('#update-entry').show()
-//  $('#handlebars-test').show()
+  // $('#handlebars-test').show()
   $('.btn-primary').show()
   store.user = responseData.user
   $('form').trigger('reset')
@@ -107,6 +107,7 @@ const onSignOutSuccess = function (response) {
   $('#sign-up').show()
   $('#sign-in').show()
   $('form').trigger('reset')
+  store.user = null
 }
 
 const onSignOutFailure = function (response) {
@@ -157,12 +158,12 @@ const onIndexEntrysSuccess = function (response) {
   $('#handlebars-test').hide()
   if (store.user) {
     const indexEntrysHTML = entrysTemplate({ entrys: response.entrys })
-  //  $('#handlebars-test').hide()
+    //  $('#handlebars-test').hide()
     $('#handlebars-test').show()
     $('#handlebars-test').html(indexEntrysHTML)
   } else {
     const indexEntrysNonAuthHTML = entrysNonAuthTemplate({entrys: response.entrys})
-  //  $('#handlebars-test').hide()
+    //  $('#handlebars-test').hide()
     $('#handlebars-test').show()
     $('#handlebars-test').html(indexEntrysNonAuthHTML)
   }
